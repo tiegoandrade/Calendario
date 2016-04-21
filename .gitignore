@@ -10,6 +10,7 @@
 .settings
 bin
 target
+.recommenders
 
 *.pydevproject
 tmp/
