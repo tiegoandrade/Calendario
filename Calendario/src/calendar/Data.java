@@ -13,7 +13,7 @@ public class Data {
 	private int segundo = -1; 
 	
 	//1° Construtor que recebe como parâmetro o dia, o mês e o ano.
-	public Data(int dia, int mes,int ano) { //Ao se criar um objeto deve-se passar o dia, a hora e o ano.
+	public Data(int dia, int mes,int ano) { 
 		this.dia = dia;
 		this.mes = mes;
 		this.ano = ano;
@@ -34,26 +34,26 @@ public class Data {
 		//String que armazenará o dia, o mês e o ano informados pelo usuário
 		String data = dia + "/" + mes + "/" + ano; 
 		
-		//Caso não seja informado as horário, só é apresentado a data.
+		//Caso não seja informado o horário, só é apresentado a data.
 		if (hora == -1){
 			System.out.println(data);
 		
 		} 
 		
-		/*Caso seja informado o horário é concatenado os minutos e os segundos, mas não o horário, 
+		/*Caso seja informado o horário, é então concatenado os minutos e os segundos, mas não o horário, 
 		pois ainda é necessário identificar seu formato.*/
 		else {
 			String horario = ":" + minuto + ":" + segundo;
 			
-			// Caso seja informado o formato de 24h a hora é concatenada com o horário sem fazer nenhuma alteração.
+			// Caso seja informado o formato de 24h, a hora é concatenada com o horário sem fazer nenhuma alteração.
 			if (formato == FORMATO_24H){
 				horario = hora + horario;
 			} 
 			
-			// Caso o formato de 12h seja escolhido é feito alguma alterações.
+			// Caso o formato de 12h seja escolhido, é feito algumas alterações.
 			else {
 				
-				// Se a hora for maior ou igual a 12, subtraia e concatena o "PM" no final.
+				// Se a hora for maior ou igual a 12, subtraia e concatene o "PM" no final.
 				if (hora >= 12){
 					horario = (hora - 12) + horario;
 					horario = horario + "PM";
@@ -70,7 +70,8 @@ public class Data {
 			System.out.println(data + " " + horario);
 		}
 	}
-
+    
+	//Métodos Getters para acessar os atributos privados.
 	public int getDia() {
 		return dia;
 	}
